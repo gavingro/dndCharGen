@@ -9,6 +9,7 @@ from generator.background import Background
 class TestCharacter(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.strongGameClasses = ["Paladin", "Barbarian"]
         cls.randomChar = Character()
         cls.strongHuman = Character(base_stats=Stats(STR=20), race='Human')
         cls.zeroStats = Character(base_stats=Stats(), race=Race(stats_mod=Stats()), auto_generate=False)
@@ -27,13 +28,13 @@ class TestCharacter(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         pass
-
     def test_generate(self):
+
         self.assertIsInstance(self.randomChar.base_stats, Stats)
         self.assertIsInstance(self.randomChar.race, Race)
         self.assertIsInstance(self.randomChar.background, Background)
         self.assertIsInstance(self.randomChar.game_class, GameClass)
-        self.assertEqual(self.strongHuman.game_class.name, 'Barbarian')
+        self.assertIn(self.strongHuman.game_class.name, TestCharacter.strongGameClasses)
 
     def test_get_stats(self):
         self.assertIsInstance(self.randomChar.get_stats(), Stats)

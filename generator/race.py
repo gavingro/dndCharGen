@@ -153,11 +153,20 @@ class Race(RpgGenerator):
             # Remove current maximum (but unmatched) stat for further iterations.
             max_stat = stat_dict.pop(max_stat)
 
-        # If no matching race is found, just randomize it.
-        # TODO: Update to search for specific SUBRACE, not just race when generate() function is updated.
         if potential_races:
             self.name = choice(potential_races)
         self.generate()
+
+        # TODO: Update to search for specific SUBRACE, not just race when generate() function is updated.
+        # In the meantime, here's an awful recursive fix:
+        stats_preferred_stats = [stat for stat, value in stats if value]
+        race_stats_mod = [stat for stat, value in self.stats_mod if value]
+        if not (
+            stats_preferred_stats[0] in race_stats_mod
+            or stats_preferred_stats[1] in race_stats_mod
+        ):
+            self.generate_from_stats(stats)
+
         return self
 
     def generate_from_gameclass(self, gameclass) -> None:

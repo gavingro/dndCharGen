@@ -13,9 +13,9 @@ class TestRace(unittest.TestCase):
     def setUpClass(cls) -> None:
         # update as gamedata grows
         cls.dex_stats = Stats(DEX=25, auto_generate=True)
-        cls.dex_races = ["Human", "Elf"]
+        cls.dex_races = ["Human", "Elf", "Gnome"]
         cls.str_stats = Stats(STR=25, auto_generate=True)
-        cls.str_races = ["Human", "Dwarf"]
+        cls.str_races = ["Human", "Dwarf", "Half-Orc"]
         cls.invalid_stats = Stats()
         cls.gameclass1 = GameClass("Barbarian", auto_generate=True)
         cls.gameclass2 = GameClass("Rogue", auto_generate=True)
@@ -69,13 +69,14 @@ class TestRace(unittest.TestCase):
             gameclass_1_preferred_stats[0] in empty_race_1_stats_mod
             or gameclass_1_preferred_stats[1] in empty_race_1_stats_mod
         )
-        self.empty_race_2.generate_from_gameclass(TestRace.gameclass1)
+        self.empty_race_2.generate_from_gameclass(TestRace.gameclass2)
         gameclass_2_preferred_stats = [
             stat for stat, value in TestRace.gameclass2.preferred_stats if value
         ]
         empty_race_2_stats_mod = [
             stat for stat, value in self.empty_race_2.stats_mod if value
         ]
+
         self.assertTrue(
             gameclass_2_preferred_stats[0] in empty_race_2_stats_mod
             or gameclass_2_preferred_stats[1] in empty_race_2_stats_mod
