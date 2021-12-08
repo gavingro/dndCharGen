@@ -43,12 +43,12 @@ class TestCharacterSheet(unittest.TestCase):
 
     def test_save_to_pdf(self):
         # Delete output PDF if already exists
-        pdf_template_fpath = __file__.replace('test_character_sheet.py', 'charSheet_published.pdf')
+        pdf_template_fpath = __file__.replace('test_character_sheet.py', 'test_charsheet.pdf')
         if os.path.exists(pdf_template_fpath):
             os.remove(pdf_template_fpath)
 
         # Run save_to_pdf()
-        save_to_pdf(self.wise_dwarf)
+        save_to_pdf(self.wise_dwarf, destination=pdf_template_fpath)
 
         # Test assertions
         self.assertTrue(os.path.exists(pdf_template_fpath)) # assertion 1 (file was created)
@@ -66,4 +66,6 @@ class TestCharacterSheet(unittest.TestCase):
                         self.assertTrue('17' in annotation['/V']) # assertion 4
                     elif key == 'Speed':
                         self.assertTrue('25' in annotation['/V']) # assertion 5
+
+        os.remove(pdf_template_fpath)
 
