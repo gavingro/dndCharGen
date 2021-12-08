@@ -1,4 +1,5 @@
 import pdfrw
+from os import getcwd
 
 class IncompleteCharacterException(Exception):
     pass
@@ -229,7 +230,7 @@ def save_to_pdf(char, flatten=False):
                     annotation.update(pdfrw.PdfDict(Ff=1))
 
     pdfrw.PdfWriter().write(
-        __file__.replace("character_sheet.py", "charSheet_published.pdf"), cs_pdf
+        getcwd() + char_info["CharacterName"].replace(" ", "_") + ".pdf"
     )
 
 
