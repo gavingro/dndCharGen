@@ -1,4 +1,4 @@
-# DATA533proj_dndCharGen [![Build Status](https://app.travis-ci.com/gavingro/DATA533proj2_dndCharGen.svg?token=JXMpGYnCxxPqFxVwgEV5&branch=main)](https://app.travis-ci.com/gavingro/DATA533proj2_dndCharGen)
+# DATA533proj_dndCharGen [![Build Status](https://app.travis-ci.com/gavingro/DATA533proj3_dndCharGen.svg?token=JXMpGYnCxxPqFxVwgEV5&branch=main)](https://app.travis-ci.com/gavingro/DATA533proj3_dndCharGen)
 
 ## Intent
 
