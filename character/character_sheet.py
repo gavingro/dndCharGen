@@ -198,7 +198,7 @@ def display(char):
     print(f'Flaws:\t\t\t\t{char_info["Flaws"]}')
 
 
-def save_to_pdf(char, flatten=False):
+def save_to_pdf(char, flatten=False, destination=None):
     """
     Creates a pdf character sheet called charSheet_published.pdf
     from the passed in character object, populating all relevent fields.
@@ -229,9 +229,15 @@ def save_to_pdf(char, flatten=False):
                 if flatten:
                     annotation.update(pdfrw.PdfDict(Ff=1))
 
-    pdfrw.PdfWriter().write(
-        getcwd() + char_info["CharacterName"].replace(" ", "_") + ".pdf"
-    )
+    if not destination:
+        destination = getcwd() + "\\"
+
+    if destination[-4:] != ".pdf":
+        if destination[-1] != "\\":
+            destination += "\\"
+        destination += f"{char_info['CharacterName'].strip()}.pdf".replace(" ", "_")
+
+    pdfrw.PdfWriter().write(destination, cs_pdf)
 
 
 # for testing
