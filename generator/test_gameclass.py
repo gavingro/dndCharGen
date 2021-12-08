@@ -9,8 +9,8 @@ class TestGameClass(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         # update as gamedata grows
-        cls.dex_classes = ["Ranger", "Rogue"]
-        cls.str_classes = ["Barbarian"]
+        cls.dex_classes = ["Ranger", "Rogue", "Bard"]
+        cls.str_classes = ["Barbarian", "Paladin"]
         cls.dex_stats = Stats(DEX=True)
         cls.str_stats = Stats(STR=True)
         cls.invalid_stats = Stats()
