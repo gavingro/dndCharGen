@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+character/charSheet_published.pdf
+.DS_Store
+.coverage
+.vscode
