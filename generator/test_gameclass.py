@@ -2,7 +2,7 @@ import unittest
 
 from .gameclass import GameClass
 from .race import Race
-from .stats import Stats
+from .stats import Stats, EmptyStatsError
 
 
 class TestGameClass(unittest.TestCase):
@@ -54,7 +54,7 @@ class TestGameClass(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             self.empty_class_3.generate_from_stats("DEX")
-        with self.assertRaises(ValueError):
+        with self.assertRaises(EmptyStatsError):
             self.empty_class_4.generate_from_stats(TestGameClass.invalid_stats)
 
     def test_gameclass_generate_from_race(self):
@@ -88,7 +88,7 @@ class TestGameClass(unittest.TestCase):
             self.empty_class_3.generate_from_race("Human")
         with self.assertRaises(TypeError):
             self.empty_class_4.generate_from_race(TestGameClass.invalid_race_1)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(EmptyStatsError):
             self.empty_class_5.generate_from_race(TestGameClass.invalid_race_2)
 
     def tearDown(self) -> None:

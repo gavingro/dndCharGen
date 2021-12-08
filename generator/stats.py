@@ -1,5 +1,8 @@
-from typing import Type
 from .rpggenerator import RpgGenerator
+
+
+class EmptyStatsError(Exception):
+    pass
 
 
 class Stats(RpgGenerator):
@@ -102,7 +105,7 @@ class Stats(RpgGenerator):
             raise TypeError("other_stats must be a generator.stats.Stats object.")
 
         if not len([stat for stat, value in other_stats if value]):
-            raise ValueError(
+            raise EmptyStatsError(
                 "other_stats must have some non-zero stat values to generate for."
             )
 
@@ -209,10 +212,10 @@ class Stats(RpgGenerator):
         """
 
         return (
-            self.STR == other.STR and
-            self.DEX == other.DEX and
-            self.CON == other.CON and
-            self.WIS == other.WIS and
-            self.INT == other.INT and
-            self.CHA == other.CHA
+            self.STR == other.STR
+            and self.DEX == other.DEX
+            and self.CON == other.CON
+            and self.WIS == other.WIS
+            and self.INT == other.INT
+            and self.CHA == other.CHA
         )

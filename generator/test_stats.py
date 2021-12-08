@@ -1,7 +1,7 @@
 import unittest
 from random import seed
 
-from .stats import Stats
+from .stats import Stats, EmptyStatsError
 from .gameclass import GameClass
 from .race import Race
 
@@ -52,7 +52,7 @@ class TestStats(unittest.TestCase):
                 ]
             ),
         )
-        with self.assertRaises(ValueError):
+        with self.assertRaises(EmptyStatsError):
             self.stats_random.maximize_for_stats(Stats())
         with self.assertRaises(TypeError):
             self.empty_stats_2.maximize_for_stats("WIS")
