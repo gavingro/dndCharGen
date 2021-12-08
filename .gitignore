@@ -1,6 +1,8 @@
 *.pyc
 __pycache__
-character/charSheet_published.pdf
 .DS_Store
 .coverage
+test-checkpoint.py
 .vscode
+
+character/charSheet_published.pdf

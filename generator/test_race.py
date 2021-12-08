@@ -2,7 +2,7 @@ from random import seed
 import unittest
 
 from .race import Race
-from .stats import Stats
+from .stats import Stats, EmptyStatsError
 from .gameclass import GameClass
 
 SEED = 2021
@@ -54,7 +54,7 @@ class TestRace(unittest.TestCase):
         )
         with self.assertRaises(TypeError):
             self.empty_race_3.generate_from_stats("DEX")
-        with self.assertRaises(ValueError):
+        with self.assertRaises(EmptyStatsError):
             self.empty_race_4.generate_from_stats(TestRace.invalid_stats)
 
     def test_race_generate_from_gameclass(self):
@@ -87,7 +87,7 @@ class TestRace(unittest.TestCase):
             self.empty_race_3.generate_from_gameclass("Rogue")
         with self.assertRaises(TypeError):
             self.empty_race_4.generate_from_gameclass(TestRace.invalid_gameclass_1)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(EmptyStatsError):
             self.empty_race_5.generate_from_gameclass(TestRace.invalid_gameclass_2)
 
     def tearDown(self) -> None:

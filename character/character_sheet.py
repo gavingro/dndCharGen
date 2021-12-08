@@ -1,5 +1,8 @@
 import pdfrw
 
+class IncompleteCharacterException(Exception):
+    pass
+
 def get_char_info(char):
     """
     Populates and returns a dictionary of information about the passed in
@@ -146,7 +149,10 @@ def display(char):
     char : character.character.Character
         The character whose information you wish to display.
     """
-    char_info = get_char_info(char)
+    try:
+        char_info = get_char_info(char)
+    except:
+        raise IncompleteCharacterException("Character object attributes are either not formatted correctly or missing.")
 
     ST_proficiencies = ""
     if char.game_class.saving_throws.STR:

@@ -1,7 +1,7 @@
 from random import choice, sample
 
 from .rpggenerator import RpgGenerator
-from .stats import Stats
+from .stats import Stats, EmptyStatsError
 from .gamedata.gameclass_data import GAMECLASSDATA
 
 
@@ -128,7 +128,7 @@ class GameClass(RpgGenerator):
             raise TypeError("stats must be a generator.stats.Stats object.")
         # check for empty Stat attribute.
         if not len([stat for stat, value in stats if value]):
-            raise ValueError(
+            raise EmptyStatsError(
                 "stats must have some non-zero stat values to generate for."
             )
 
@@ -177,7 +177,7 @@ class GameClass(RpgGenerator):
             raise TypeError("race.stats_mod must be a generator.stats.Stats object.")
         # check for empty Stat attribute.
         if not len([stat for stat, value in race.stats_mod if value]):
-            raise ValueError(
+            raise EmptyStatsError(
                 "Race.stats_mod must have some non-zero stat values to generate for."
             )
 
