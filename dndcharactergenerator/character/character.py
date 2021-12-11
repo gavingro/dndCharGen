@@ -1,7 +1,7 @@
-from generator.stats import Stats
-from generator.race import Race
-from generator.gameclass import GameClass
-from generator.background import Background
+from ..generator.stats import Stats
+from ..generator.race import Race
+from ..generator.gameclass import GameClass
+from ..generator.background import Background
 
 
 class Character:
@@ -130,8 +130,8 @@ class Character:
                 self.game_class = GameClass()
                 self.game_class.generate_from_stats(self.base_stats)
         else:
-            self.base_stats = Stats(auto_generate = True)
-            
+            self.base_stats = Stats(auto_generate=True)
+
             self.game_class = GameClass()
             self.game_class.generate_from_stats(self.base_stats)
 

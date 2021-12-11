@@ -1,4 +1,4 @@
-import generator.stats
+from ..stats import Stats
 
 RACEDATA = {
     # To be expanded upon
@@ -8,7 +8,7 @@ RACEDATA = {
     #     "speed": 30,
     #     "subraces": {
     #         "subrace_name": {
-    #             "stats_mod": generator.stats.Stats(),
+    #             "stats_mod": Stats(),
     #         }
     #     },
     # }
@@ -88,9 +88,9 @@ RACEDATA = {
         "speed": 25,
         "subraces": {
             "Hill Dwarf": {
-                "stats_mod": generator.stats.Stats(CON=2, WIS=1),
+                "stats_mod": Stats(CON=2, WIS=1),
             },
-            "Mountain Dwarf": {"stats_mod": generator.stats.Stats(CON=2, STR=2)},
+            "Mountain Dwarf": {"stats_mod": Stats(CON=2, STR=2)},
         },
     },
     "Elf": {
@@ -187,13 +187,13 @@ RACEDATA = {
         "speed": 30,
         "subraces": {
             "High Elf": {
-                "stats_mod": generator.stats.Stats(DEX=2, INT=1),
+                "stats_mod": Stats(DEX=2, INT=1),
             },
             "Wood Elf": {
-                "stats_mod": generator.stats.Stats(DEX=2, WIS=1),
+                "stats_mod": Stats(DEX=2, WIS=1),
             },
             "Drow": {
-                "stats_mod": generator.stats.Stats(DEX=2, CHA=1),
+                "stats_mod": Stats(DEX=2, CHA=1),
             },
         },
     },
@@ -252,14 +252,10 @@ RACEDATA = {
         "speed": 30,
         "subraces": {
             "Calishite": {
-                "stats_mod": generator.stats.Stats(
-                    STR=1, DEX=1, WIS=1, INT=1, CHA=1, CON=1
-                ),
+                "stats_mod": Stats(STR=1, DEX=1, WIS=1, INT=1, CHA=1, CON=1),
             },
             "Damaran": {
-                "stats_mod": generator.stats.Stats(
-                    STR=1, DEX=1, WIS=1, INT=1, CHA=1, CON=1
-                ),
+                "stats_mod": Stats(STR=1, DEX=1, WIS=1, INT=1, CHA=1, CON=1),
             },
         },
     },
@@ -319,7 +315,7 @@ RACEDATA = {
         "speed": 30,
         "subraces": {
             "Tiefling": {
-                "stats_mod": generator.stats.Stats(INT=1, CHA=2),
+                "stats_mod": Stats(INT=1, CHA=2),
             },
         },
     },
@@ -355,7 +351,7 @@ RACEDATA = {
         "speed": 30,
         "subraces": {
             "Half-Orc": {
-                "stats_mod": generator.stats.Stats(STR=2, CON=1),
+                "stats_mod": Stats(STR=2, CON=1),
             }
         },
     },
@@ -436,10 +432,10 @@ RACEDATA = {
         "speed": 30,
         "subraces": {
             "Forest Gnome": {
-                "stats_mod": generator.stats.Stats(INT=2, DEX=1),
+                "stats_mod": Stats(INT=2, DEX=1),
             },
             "Rock Gnome": {
-                "stats_mod": generator.stats.Stats(INT=2, CON=1),
+                "stats_mod": Stats(INT=2, CON=1),
             },
         },
     },

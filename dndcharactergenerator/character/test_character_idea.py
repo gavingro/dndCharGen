@@ -2,11 +2,11 @@ import unittest
 import io
 from contextlib import redirect_stdout
 
-from character.character import Character
-from character.character_idea import a_or_an
-from character.character_idea import stat_descriptor
-from character.character_idea import display
-from generator.stats import Stats
+from .character import Character
+from .character_idea import a_or_an
+from .character_idea import stat_descriptor
+from .character_idea import display
+from ..generator.stats import Stats
 
 class TestCharacterIdea(unittest.TestCase):
     @classmethod

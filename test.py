@@ -1,13 +1,13 @@
 import unittest
 
-from generator.test_background import TestBackground
-from generator.test_race import TestRace
-from generator.test_stats import TestStats
-from generator.test_rpggenerator import TestRpgGenerator
-from generator.test_gameclass import TestGameClass
-from character.test_character import TestCharacter
-from character.test_character_idea import TestCharacterIdea
-from character.test_character_sheet import TestCharacterSheet
+from dndcharactergenerator.generator.test_background import TestBackground
+from dndcharactergenerator.generator.test_race import TestRace
+from dndcharactergenerator.generator.test_stats import TestStats
+from dndcharactergenerator.generator.test_rpggenerator import TestRpgGenerator
+from dndcharactergenerator.generator.test_gameclass import TestGameClass
+from dndcharactergenerator.character.test_character import TestCharacter
+from dndcharactergenerator.character.test_character_idea import TestCharacterIdea
+from dndcharactergenerator.character.test_character_sheet import TestCharacterSheet
 
 
 def full_test_suite():
