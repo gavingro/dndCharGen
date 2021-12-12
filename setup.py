@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dndcharactergenerator",
-    version="0.1.3",
+    version="0.1.4",
     packages=find_packages(exclude=["test*"]),
     license="MIT",
     description="A python package to generate a D&D character and populate a character sheet.",
