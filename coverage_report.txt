@@ -1,0 +1,26 @@
+Name                                                          Stmts   Miss  Cover
+---------------------------------------------------------------------------------
+dndcharactergenerator/character/__init__.py                       0      0   100%
+dndcharactergenerator/character/character.py                     67      2    97%
+dndcharactergenerator/character/character_idea.py                60      3    95%
+dndcharactergenerator/character/character_sheet.py               75     13    83%
+dndcharactergenerator/character/test_character.py                43      0   100%
+dndcharactergenerator/character/test_character_idea.py           47      0   100%
+dndcharactergenerator/character/test_character_sheet.py          56      1    98%
+dndcharactergenerator/generator/__init__.py                       0      0   100%
+dndcharactergenerator/generator/background.py                    32      1    97%
+dndcharactergenerator/generator/gameclass.py                     58      1    98%
+dndcharactergenerator/generator/gamedata/background_data.py       1      0   100%
+dndcharactergenerator/generator/gamedata/gameclass_data.py        2      0   100%
+dndcharactergenerator/generator/gamedata/race_data.py             2      0   100%
+dndcharactergenerator/generator/race.py                          66      1    98%
+dndcharactergenerator/generator/rpggenerator.py                  16      2    88%
+dndcharactergenerator/generator/stats.py                         71      1    99%
+dndcharactergenerator/generator/test_background.py               23      0   100%
+dndcharactergenerator/generator/test_gameclass.py                60      0   100%
+dndcharactergenerator/generator/test_race.py                     66      2    97%
+dndcharactergenerator/generator/test_rpggenerator.py             19      0   100%
+dndcharactergenerator/generator/test_stats.py                    72      2    97%
+test.py                                                          24     13    46%
+---------------------------------------------------------------------------------
+TOTAL                                                           860     42    95%
