@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dndcharactergenerator",
-    version="0.1.5",
+    version="0.1.6",
     packages=find_packages(exclude=["test*"]),
     license="MIT",
     description="A python package to generate a D&D character and populate a character sheet.",
@@ -10,5 +10,5 @@ setup(
     url="https://github.com/gavingro/DATA533proj3_dndCharGen.git",
     author="gavingro, kradford7",
     author_email="grochowskigavin@gmail.com, kevin.radford117@gmail.com",
-    data_files=[('./dndcharactergenerator/character', ['dndcharactergenerator/character/charSheet_template.pdf'])]
+    data_files=[('./lib/site-packages/dndcharactergenerator/character', ['dndcharactergenerator/character/charSheet_template.pdf'])]
 )
