@@ -10,4 +10,5 @@ setup(
     url="https://github.com/gavingro/DATA533proj3_dndCharGen.git",
     author="gavingro, kradford7",
     author_email="grochowskigavin@gmail.com, kevin.radford117@gmail.com",
+    data_files=[('./dndcharactergenerator/character', ['dndcharactergenerator/character/charSheet_template.pdf'])]
 )
