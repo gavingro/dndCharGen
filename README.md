@@ -206,10 +206,4 @@ Flaws:				I judge others harshly, and myself even more severely.
 
 ---
 ## Video
-![](tutorial_video.mp4)
-
-video 2  
-
-<video controls>
-  <source src="tutorial_video.mp4" type="video/mp4">
-</video>
+![](tutorial_video_gif.gif)
