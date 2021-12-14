@@ -203,3 +203,13 @@ Flaws:				I judge others harshly, and myself even more severely.
 *save_to_pdf(char, flatten=False)*
 
 - Creates a pdf character sheet called charSheet_published.pdf from the passed in character object, populating all relevent fields.
+
+---
+## Video
+![](tutorial_video.mp4)
+
+video 2  
+
+<video controls>
+  <source src="tutorial_video.mp4" type="video/mp4">
+</video>
